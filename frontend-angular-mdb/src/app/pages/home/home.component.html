@@ -1,0 +1,33 @@
+   <form [formGroup]="validationForm">
+
+    <div class="md-form">
+      <i class="fa fa-lock prefix"></i>
+      <input mdbInput mdbValidate formControlName="linkFormControl" minLength="10" maxLength="25" type="url"
+             class="form-control" id="form10" [(ngModel)]="linkInputForm">
+      <label for="form10">Type your link</label>
+      <mdb-error *ngIf="linkForm.invalid && (linkForm.dirty || linkForm.touched)">Input invalid
+      </mdb-error>
+      <!--<mdb-success *ngIf="linkForm.valid && (linkForm.dirty || linkForm.touched)">Input valid
+      </mdb-success>-->
+
+      <div class="md-form">
+        <i class="fa fa-envelope prefix"></i>
+        <input mdbInput mdbValidate formControlName="countFormControl" minLength="8" maxLength="25" type="email"
+               class="form-control" id="form9" >
+        <label for="form9">Count</label>
+        <mdb-error *ngIf="countForm.invalid && (countForm.dirty || countForm.touched)">Input invalid</mdb-error>
+        <!--<mdb-success *ngIf="emailFormEx.valid && (countForm.dirty || countForm.touched)">Input valid</mdb-success>  -->
+      </div>
+
+
+      <!-- Sign in button -->
+      <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+              (click)="submitForm(validationForm)"
+              type="submit">get Images
+      </button>
+
+
+    </div>
+  </form>
+
+
